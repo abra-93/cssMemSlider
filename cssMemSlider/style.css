@@ -1,0 +1,163 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
+:root {
+  --controll: #53b7e2;
+  --controll-hover: #f5f4f2;
+  --bg: #e4e4e4;
+  --bg-slider: #373737;
+  --color-text: #f5f4f2;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+li {
+  list-style: none;
+}
+body {
+  font-family: "Montserrat", sans-serif;
+  font-size: 16px;
+}
+.wrapper {
+  max-width: 1080px;
+  width: 100%;
+  height: 100vh;
+  padding: 30px;
+  margin: 0 auto;
+}
+.slider {
+  height: auto;
+  background: var(--bg-slider);
+  border-radius: 20px;
+}
+.slider__wrapper {
+  padding: 20px 30px;
+}
+.slider__head {
+  max-height: 50%;
+  margin-bottom: 20px;
+  position: relative;
+}
+.slider__body {
+  display: flex;
+  justify-content: space-between;
+  flex-flow: row-reverse;
+  align-items: center;
+}
+@media (max-width: 899px) {
+  .slider__body {
+    flex-direction: column;
+
+    text-align: center;
+    transition: 0.3s ease-in-out;
+  }
+}
+
+/* Image */
+
+.slider__image {
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.next-image {
+  width: 0;
+  height: 0;
+  visibility: hidden;
+  position: absolute;
+  right: 0;
+  top: 0;
+  height: 100%;
+  transform: translateX(100%);
+}
+
+/* controll */
+.slider__controll {
+  margin-bottom: 20px;
+}
+
+.controll__list {
+  display: flex;
+}
+.list__item {
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+.list__item:hover .list__dot:not(.active-dot) {
+  background: var(--controll-hover);
+}
+
+.list__dot {
+  display: block;
+  width: 15px;
+  height: 15px;
+  background: var(--controll);
+  border-radius: 10px;
+  transition: 0.3s ease-in-out;
+}
+
+.active-dot {
+  background: transparent;
+  border: 2px solid var(--controll);
+}
+
+.list__item:hover .active-dot {
+  border-color: var(--controll-hover);
+}
+
+@media (max-width: 899px) {
+  .controll__list {
+    justify-content: center;
+  }
+}
+
+/* Text */
+
+.slider__text {
+  height: 30px;
+}
+.text__list {
+  display: flex;
+  height: 30px;
+}
+
+.text__item {
+  width: 0;
+  color: var(--color-text);
+  display: none;
+  transition: 0.3s ease-in-out;
+}
+.active-text {
+  width: 100%;
+  visibility: visible;
+  display: block;
+  transition: 0.4s ease-in-out;
+}
+
+.next-text {
+  visibility: hidden;
+}
+
+.show {
+  animation: textShow 0.4s ease-in-out;
+}
+
+@keyframes textShow {
+  from {
+    transform: translateX(50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+  }
+}

@@ -8,6 +8,50 @@
     <link rel="stylesheet" href="./style.css" />
   </head>
   <body>
+    <div class="wrapper">
+      <div class="slider">
+        <div class="slider__wrapper">
+          <div class="slider__head">
+            <div class="slider__image active-image">
+              <img src="./assets/gif/1.gif" alt="img" />
+            </div>
+            <div class="slider__image next-image">
+              <img src="./assets/gif/2.gif" alt="img" />
+            </div>
+          </div>
+          <div class="slider__body">
+            <div class="slider__controll">
+              <ul class="controll__list">
+                <li class="list__item" data-id="1">
+                  <span class="list__dot active-dot"></span>
+                </li>
+                <li class="list__item" data-id="2">
+                  <span class="list__dot"></span>
+                </li>
+                <li class="list__item" data-id="3">
+                  <span class="list__dot"></span>
+                </li>
+                <li class="list__item" data-id="4">
+                  <span class="list__dot"></span>
+                </li>
+              </ul>
+            </div>
+            <div class="slider__text">
+              <ul class="text__list">
+                <li class="text__item active-text" data-id="1">
+                  Lorem, ipsum dolor. 1
+                </li>
+                <li class="text__item" data-id="2">
+                  Lorem ipsum dolor sit amet. 2
+                </li>
+                <li class="text__item" data-id="3">Lorem ipsum dolor sit. 3</li>
+                <li class="text__item" data-id="4">Lorem, ipsum. 4</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
     <script src="./script.js"></script>
   </body>
 </html>
