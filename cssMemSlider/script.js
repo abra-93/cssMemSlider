@@ -6,7 +6,6 @@ const LIST_DOT = document.querySelectorAll(".list__dot");
 const TEXT_ITEM = document.querySelectorAll(".text__item");
 
 const changeText = (id) => {
-  NEXT_IMG.children[0].src = `./assets/gif/${+id}.gif`;
   TEXT_ITEM.forEach((text) => {
     text.classList.remove("active-text");
     if (+text.dataset.id == id) {
@@ -21,21 +20,19 @@ const changeText = (id) => {
 };
 
 const changeImage = (id) => {
-  let nextImg = ACTIVE_IMG.nextElementSibling || IMG[0];
-  ACTIVE_IMG.classList.add("hide");
-  nextImg.classList.add("show");
-  console.log(id);
-  setTimeout(() => {
-    ACTIVE_IMG.classList.remove("hide");
-    nextImg.classList.remove("show");
-    ACTIVE_IMG.children[0].src = `./assets/gif/${id}.gif`;
-  }, 500);
+  IMG.forEach((el) => el.classList.remove("active-image"));
+  let image = Array.from(IMG).find((s) => +s.dataset.id === id);
 
-  console.log(nextImg);
+  image.classList.add("active-image");
+  image.classList.add("show-image");
+
+  setTimeout(() => {
+    image.classList.remove("show-image");
+  }, 1000);
 };
 
 const clickDot = (dot) => {
-  let id = dot.dataset.id;
+  let id = +dot.dataset.id;
 
   LIST_DOT.forEach((el) => {
     el.classList.remove("active-dot");

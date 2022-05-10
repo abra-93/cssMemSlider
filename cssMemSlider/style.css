@@ -41,6 +41,7 @@ body {
   margin-bottom: 20px;
   position: relative;
   overflow: hidden;
+  border-radius: 20px;
 }
 .slider__body {
   display: flex;
@@ -58,7 +59,8 @@ body {
 
 .slider__image {
   border-radius: 20px;
-  overflow: hidden;
+  visibility: hidden;
+  display: none;
 }
 
 img {
@@ -66,44 +68,39 @@ img {
   height: 100%;
   object-fit: cover;
 }
-
-.next-image {
-  visibility: hidden;
-  position: absolute;
-  right: 0;
-  top: 0;
-  height: 100%;
-  /* transform: translateX(100%); */
-}
-.show {
-  animation: imgShow 0.4s ease-in-out;
+.active-image {
   visibility: visible;
+  display: block;
+}
+
+.show-image {
+  animation: imgShow 0.3s ease-in-out;
 }
 
 @keyframes imgShow {
-  from {
-    transform: translateX(300px);
+  0% {
+    transform: translateX(100px);
     opacity: 0;
   }
-  to {
+
+  100% {
     transform: translateX(0);
     opacity: 1;
   }
 }
-.hide {
-  animation: imgHide 0.4s ease-in-out;
+.hide-image {
+  animation: hideImg 0.4s ease-out;
 }
-
-@keyframes imgHide {
-  from {
-    transform: translateX(0px) scale(1);
+@keyframes hideImg {
+  0% {
+    transform: translateX(0);
+    opacity: 1;
   }
-  to {
-    transform: translateX(-300px) scale(0.8);
+  100% {
+    transform: translateX(-100px);
     opacity: 0;
   }
 }
-
 /* controll */
 .slider__controll {
   /* margin-bottom: 20px; */
