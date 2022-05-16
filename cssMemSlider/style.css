@@ -66,30 +66,26 @@ input[type="radio"] {
   animation: img1 0.4s ease-in-out;
   display: block;
   animation: imgShow 0.4s ease-in-out;
-  /* transform: translate(0, 0); */
 }
 #s2:checked ~ .slider__head > .img2 {
   animation: img2 0.4s ease-in-out;
   display: block;
   animation: imgShow 0.4s ease-in-out;
-  /* transform: translate(0, -100%); */
 }
 #s3:checked ~ .slider__head > .img3 {
   animation: img3 0.4s ease-in-out;
   display: block;
   animation: imgShow 0.4s ease-in-out;
-  /* transform: translate(0, -200%); */
 }
 #s4:checked ~ .slider__head > .img4 {
   animation: img4 0.4s ease-in-out;
   display: block;
   animation: imgShow 0.4s ease-in-out;
-  /* transform: translate(0, -300%); */
 }
 
 @keyframes imgShow {
   from {
-    transform: translateX(50px);
+    transform: translateX(100px);
     opacity: 0;
   }
   to {
@@ -97,48 +93,7 @@ input[type="radio"] {
     opacity: 1;
   }
 }
-/* 
-@keyframes img1 {
-  0% {
-    transform: translate(100%, 0);
-    opacity: 0;
-  }
-  100% {
-    transform: translate(0, 0);
-    opacity: 1;
-  }
-}
 
-@keyframes img2 {
-  0% {
-    transform: translate(100%, -100%);
-    opacity: 0;
-  }
-  100% {
-    transform: translate(0, -100%);
-    opacity: 1;
-  }
-}
-@keyframes img3 {
-  0% {
-    transform: translate(100%, -200%);
-    opacity: 0;
-  }
-  100% {
-    transform: translate(0, -200%);
-    opacity: 1;
-  }
-}
-@keyframes img4 {
-  0% {
-    transform: translate(100%, -300%);
-    opacity: 0;
-  }
-  100% {
-    transform: translate(0, -300%);
-    opacity: 1;
-  }
-} */
 /* ============ ! Slides ============================ */
 
 /* ============Slider controll ================================*/
@@ -225,22 +180,22 @@ input[type="radio"] {
 #s1:checked ~ .slider__body > .slider__text > .t1 {
   visibility: visible;
 
-  animation: textShow1 0.3s ease-in-out;
+  animation: textShow1 0.4s ease-in-out;
 }
 #s2:checked ~ .slider__body > .slider__text > .t2 {
   visibility: visible;
   transform: translate(0px, -20px);
-  animation: textShow2 0.3s ease-in-out;
+  animation: textShow2 0.4s ease-in-out;
 }
 #s3:checked ~ .slider__body > .slider__text > .t3 {
   visibility: visible;
   transform: translate(0px, -40px);
-  animation: textShow3 0.3s ease-in-out;
+  animation: textShow3 0.4s ease-in-out;
 }
 #s4:checked ~ .slider__body > .slider__text > .t4 {
   visibility: visible;
   transform: translate(0px, -60px);
-  animation: textShow4 0.3s ease-in-out;
+  animation: textShow4 0.4s ease-in-out;
 }
 @keyframes textShow1 {
   from {
