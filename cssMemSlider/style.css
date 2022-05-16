@@ -1,0 +1,252 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
+:root {
+  --controll: #53b7e2;
+  --controll-hover: #f5f4f2;
+  --bg: #e4e4e4;
+  --bg-slider: #373737;
+  --color-text: #f5f4f2;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+li {
+  list-style: none;
+}
+body {
+  font-family: "Montserrat", sans-serif;
+  font-size: 16px;
+  background: var(--bg-slider);
+}
+input[type="radio"] {
+  visibility: hidden;
+  appearance: none;
+}
+/* ============ Base style slider =================== */
+.wrapper {
+  max-width: 1920px;
+  margin: 0 auto;
+}
+.slider {
+  max-width: 100%;
+  height: 100vh;
+  padding: 5% 10%;
+  display: flex;
+  flex-direction: column;
+}
+
+.slider__head {
+  flex-shrink: 2;
+  overflow: hidden;
+  border-radius: 20px;
+  margin-bottom: 30px;
+}
+.slider__body {
+  display: flex;
+  flex-wrap: wrap;
+  flex-shrink: 1;
+  flex-direction: row-reverse;
+}
+/* ============ ! Base style slider =================== */
+
+/* ============Slides ================================*/
+.slider__img {
+  width: 100%;
+  height: 100%;
+  display: none;
+}
+.slider__img img {
+  width: 100%;
+  height: 100%;
+  object-fit: fill;
+}
+
+#s1:checked ~ .slider__head > .img1 {
+  animation: img1 0.4s ease-in-out;
+  display: block;
+  animation: imgShow 0.4s ease-in-out;
+}
+#s2:checked ~ .slider__head > .img2 {
+  animation: img2 0.4s ease-in-out;
+  display: block;
+  animation: imgShow 0.4s ease-in-out;
+}
+#s3:checked ~ .slider__head > .img3 {
+  animation: img3 0.4s ease-in-out;
+  display: block;
+  animation: imgShow 0.4s ease-in-out;
+}
+#s4:checked ~ .slider__head > .img4 {
+  animation: img4 0.4s ease-in-out;
+  display: block;
+  animation: imgShow 0.4s ease-in-out;
+}
+
+@keyframes imgShow {
+  from {
+    transform: translateX(100px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+/* ============ ! Slides ============================ */
+
+/* ============Slider controll ================================*/
+.slider__controll {
+  display: flex;
+  flex: 1 1;
+  justify-content: flex-end;
+  transition: 0.4s ease-in-out;
+}
+@media (max-width: 768px) {
+  .slider__controll {
+    justify-content: center;
+    margin-bottom: 30px;
+  }
+}
+.controll__wrap {
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+}
+.controll__wrap:hover .controll__dot {
+  background: var(--controll-hover);
+}
+.controll__dot {
+  display: block;
+  width: 15px;
+  height: 15px;
+  border-radius: 15px;
+  background: var(--controll);
+  transition: 0.3s ease-in-out;
+}
+
+#s1:checked ~ .slider__body > .slider__controll > .s1 > #dot1 {
+  background: transparent;
+  border: 2px solid var(--controll);
+}
+#s2:checked ~ .slider__body > .slider__controll > .s2 > #dot2 {
+  background: transparent;
+  border: 2px solid var(--controll);
+}
+#s3:checked ~ .slider__body > .slider__controll > .s3 > #dot3 {
+  background: transparent;
+  border: 2px solid var(--controll);
+}
+#s4:checked ~ .slider__body > .slider__controll > .s4 > #dot4 {
+  background: transparent;
+  border: 2px solid var(--controll);
+}
+#s1:checked:hover ~ .slider__body > .slider__controll > .s1 > #dot1 {
+  background: transparent;
+  border: 2px solid var(--controll-hover);
+}
+#s2:checked:hover ~ .slider__body > .slider__controll > .s2 > #dot2 {
+  background: transparent;
+  border: 2px solid var(--controll-hover);
+}
+#s3:checked:hover ~ .slider__body > .slider__controll > .s3 > #dot3 {
+  background: transparent;
+  border: 2px solid var(--controll-hover);
+}
+#s4:checked:hover ~ .slider__body > .slider__controll > .s4 > #dot4 {
+  background: transparent;
+  border: 2px solid var(--controll-hover);
+}
+/* ============ ! Slider controll ============================ */
+
+/* ============Slider text ================================*/
+.slider__text {
+  flex: 1 1 500px;
+  flex-direction: column;
+  display: flex;
+  overflow: hidden;
+  height: 20px;
+}
+.text {
+  display: inline-block;
+  font-size: 16px;
+  color: var(--color-text);
+}
+.text {
+  visibility: hidden;
+}
+
+#s1:checked ~ .slider__body > .slider__text > .t1 {
+  visibility: visible;
+
+  animation: textShow1 0.4s ease-in-out;
+}
+#s2:checked ~ .slider__body > .slider__text > .t2 {
+  visibility: visible;
+  transform: translate(0px, -20px);
+  animation: textShow2 0.4s ease-in-out;
+}
+#s3:checked ~ .slider__body > .slider__text > .t3 {
+  visibility: visible;
+  transform: translate(0px, -40px);
+  animation: textShow3 0.4s ease-in-out;
+}
+#s4:checked ~ .slider__body > .slider__text > .t4 {
+  visibility: visible;
+  transform: translate(0px, -60px);
+  animation: textShow4 0.4s ease-in-out;
+}
+@keyframes textShow1 {
+  from {
+    opacity: 0;
+    transform: translate(100px, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate(0, 0);
+  }
+}
+@keyframes textShow2 {
+  0% {
+    opacity: 0;
+    transform: translate(100px, 0px);
+  }
+  50% {
+    transform: translate(100px, -20px);
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0px, -20px);
+  }
+}
+@keyframes textShow3 {
+  0% {
+    opacity: 0;
+    transform: translate(100px, 0px);
+  }
+  50% {
+    transform: translate(100px, -40px);
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0px, -40px);
+  }
+}
+@keyframes textShow4 {
+  0% {
+    opacity: 0;
+    transform: translate(100px, 0px);
+  }
+  50% {
+    transform: translate(100px, -60px);
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0px, -60px);
+  }
+}
+/* ============ ! Slider text ============================ */
